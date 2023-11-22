@@ -87,7 +87,7 @@ include 'conexao.php';
       </form>
       <ul class="nav navbar-nav navbar-right">
         <?php if (empty($_SESSION['ID'])) { ?>
-          <li><a href="login.php"><span class="glyphicon glyphicon-log-in" style="color:aliceblue"> Login</a></li>
+          <li><a href="FormLogin.php"><span class="glyphicon glyphicon-log-in" style="color:aliceblue"> Login</a></li>
           <?php } else {
 
           if ($_SESSION['Status'] == 0) {
