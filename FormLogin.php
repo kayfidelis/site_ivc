@@ -48,9 +48,10 @@
                         <input name="txtsenha" type="password" class="form-control" required id="senha">
                     </div>
                     <br />
-                    <button type="submit" class="btn btn-primary">
-                        Login
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        <span class="glyphicon glyphicon-ok"></span> Entrar
                     </button>
+                    <a href="FormCadastro.php" class="btn btn-link btn-block">Ainda não sou cadastrado</a>
             </div>
         </div>
 </body>
