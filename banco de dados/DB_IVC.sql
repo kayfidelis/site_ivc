@@ -1,10 +1,11 @@
 create database ivc;
 use ivc; 
 
-CREATE USER 'admin1'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ivc123456';
-GRANT ALL PRIVILEGES ON ivc.* TO 'admin1'@'localhost' WITH GRANT OPTION;
+CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ivc123456';
+GRANT ALL PRIVILEGES ON ivc.* TO 'admin'@'localhost' WITH GRANT OPTION;
 
 
+------------------------------------------------- tudo relacionado a tabela de membros -------------------------------------------------
 create table tbl_membros(
 	id_membro int primary key auto_increment,
     nm_membro varchar (80),
@@ -43,3 +44,43 @@ end $$
 delimiter ;
 
 select  * from tbl_membros;
+------------------------------------------------- fim -------------------------------------------------
+
+
+
+------------------------------------------------- tudo relacionado a tabela de Unidades -------------------------------------------------
+create table tbl_unidades(
+	id_unidade int primary key auto_increment,
+    nm_unidade varchar (80)
+);
+
+drop procedure if exists inserir_unidade;
+delimiter $$ 
+create procedure inserir_unidade(
+	in p_nm_unidade varchar (80)
+)
+begin 
+	declare erro_SQL tinyint default false;
+	declare continue handler for sqlexception set erro_SQL = true;
+    
+    start transaction;
+		insert into tbl_unidades (nm_unidade)
+			values (p_nm_unidade);
+	
+    if(erro_SQL = false) then 
+		commit;
+			select 'Operação executada com sucesso !!';
+	else 
+		rollback;
+			select 'Ocorreu algum erro ao enviar os registros!';
+	end if;
+end $$
+delimiter ;
+
+call inserir_unidade ('IVC São Paulo');
+call inserir_unidade ('IVC Rio de Janeiro');
+call inserir_unidade ('IVC Belo Horizonte');
+call inserir_unidade ('IVC Curvelo');
+
+select * from tbl_unidades;
+------------------------------------------------- fim -------------------------------------------------
