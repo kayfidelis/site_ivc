@@ -51,7 +51,7 @@ create table tbl_membros(
     nm_membro varchar (80),
     senha varchar (100),
     ds_status boolean,
-    tel_membro varchar (11),
+    tel_membro varchar (80),
 	email_membro varchar (80),
     constraint fk_unidade foreign key(id_unidade) references tbl_unidades(id_unidade)
 );
