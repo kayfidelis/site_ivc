@@ -28,11 +28,11 @@ if ($consulta->rowCount() == 1) {
 
         $incluir->execute();
 
-    $mensagem = "Cadastro realizado com sucesso, $nome!";
+    $mensagem = "Cadastro realizado com sucesso, $nome! Agora você pode fazer seu login.";
     
     echo '<script>
             alert("' . $mensagem . '");
-            window.location.href = "ok.php";
+            window.location.href = "FormLogin.php";
           </script>';
 }
 ?>
