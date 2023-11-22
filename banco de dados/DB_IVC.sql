@@ -1,5 +1,5 @@
 create database ivc;
-use ivc; 
+use ivc;
 
 CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ivc123456';
 GRANT ALL PRIVILEGES ON ivc.* TO 'admin'@'localhost' WITH GRANT OPTION;
@@ -64,7 +64,7 @@ create procedure inserir_membros(
 	in p_nm_membro varchar (80),
     in p_senha varchar (100),
     in p_ds_status boolean,
-    in p_tel_membro varchar (11),
+    in p_tel_membro varchar (80),
     in p_email_membro varchar (80)
 )
 begin 
