@@ -8,21 +8,24 @@ GRANT ALL PRIVILEGES ON ivc.* TO 'admin'@'localhost' WITH GRANT OPTION;
 ------------------------------------------------- tudo relacionado a tabela de Unidades -------------------------------------------------
 create table tbl_unidades(
 	id_unidade int primary key auto_increment,
-    nm_unidade varchar (80)
+    nm_unidade varchar (80),
+    endereço_unidade varchar (80)
 );
+
 
 drop procedure if exists inserir_unidade;
 delimiter $$ 
 create procedure inserir_unidade(
-	in p_nm_unidade varchar (80)
+	in p_nm_unidade varchar (80),
+    in p_endereço_unidade varchar (80)
 )
 begin 
 	declare erro_SQL tinyint default false;
 	declare continue handler for sqlexception set erro_SQL = true;
     
     start transaction;
-		insert into tbl_unidades (nm_unidade)
-			values (p_nm_unidade);
+		insert into tbl_unidades (nm_unidade, endereço_unidade)
+			values (p_nm_unidade, p_endereço_unidade);
 	
     if(erro_SQL = false) then 
 		commit;
@@ -34,10 +37,7 @@ begin
 end $$
 delimiter ;
 
-call inserir_unidade ('IVC São Paulo');
-call inserir_unidade ('IVC Rio de Janeiro');
-call inserir_unidade ('IVC Belo Horizonte');
-call inserir_unidade ('IVC Curvelo');
+call inserir_unidade ('IVC São Paulo' , 'Rua Santa Anna n3, Residencial Solnascente');
 
 select * from tbl_unidades;
 ------------------------------------------------- fim -------------------------------------------------
