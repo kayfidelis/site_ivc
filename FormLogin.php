@@ -52,7 +52,7 @@
                         <label for="senha">Senha :</label>
                         <input name="txtsenha" type="password" class="form-control" required id="senha">
                         <br/>
-                        <a href="alteraSenha.php">Esqueci minha senha</a>
+                        <a href="FormRecupera_Senha.php">Esqueci minha senha</a>
                     </div>
                     <br />
                     <button type="submit" class="btn btn-primary btn-lg btn-block">
