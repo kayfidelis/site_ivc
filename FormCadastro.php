@@ -9,25 +9,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="jquery-mask.js"></script>
-    
+
     <style>
-       
         .custom-form {
             background-color: #000000;
             padding: 4vw;
             border-radius: 3rem;
-            margin-top: 1rem;
+            margin-top: 5%;
+            margin-bottom: 5%;
         }
-        .custom-form label{
+
+        .custom-form label {
             color: white;
         }
-        
+
         .custom-form h2 {
             text-align: center;
             color: white;
         }
     </style>
-    
+
     <script>
         $(document).ready(function() {
             $("#telefone").mask("(00) 0000-00009");
@@ -38,16 +39,16 @@
 <body>
     <?php
     session_start();
-    include 'conexao.php'; 
+    include 'conexao.php';
     $consultaUnidade = $cn->query("select * from tbl_unidades");
     ?>
-   
+
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 custom-form">
+            <div class="col-sm-6 col-sm-offset-3 custom-form mx-auto">
                 <h2>Cadastro de Membros IVC</h2>
-                <br/>
+                <br />
                 <form method="post" action="inserir_membro.php" name="logon">
                     <div class="form-group">
                         <label for="nome">Nome Completo :</label>
@@ -70,11 +71,17 @@
                             <?php } ?>
                         </select>
                     </div>
+                    <br/>
+                    <div>
+                        <label for="data">Data de Nascimento:</label>
+                        <input type="date" id="data" name="data" required placeholder="Ex: 25/03/2000">
+                    </div>
+                    <br/>
                     <div class="form-group">
                         <label for="senha">Senha :</label>
                         <input name="txtsenha" type="password" class="form-control" required id="senha" placeholder="Ex: senha@123">
                     </div>
-                    <br/>
+                    <br />
                     <button type="submit" class="btn btn-primary">
                         Cadastrar
                     </button>
