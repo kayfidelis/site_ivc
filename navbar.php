@@ -85,7 +85,7 @@ include 'conexao.php';
             $consulta_usuario = $cn->query("select nm_membro from tbl_membros where id_membro = '$_SESSION[ID]'");
             $exibe_membro = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
           ?>
-            <li><a style="color:aliceblue" href="frmUsuario.php?IdUser=<?php echo $exibe_membro['nm_membro']; ?>"><span class="glyphicon glyphicon-user" style="color:aliceblue"> </span> <?php echo $exibe_membro['nm_membro']; ?></a></li>
+            <li><a style="color:aliceblue" href="FormAltera_membro.php?id_membro=<?php echo $exibe_membro['nm_membro']; ?>"><span class="glyphicon glyphicon-user" style="color:aliceblue"> </span> <?php echo $exibe_membro['nm_membro']; ?></a></li>
             <li><a style="color:aliceblue" href="sair.php" onclick="mostrarAlerta()"><span class="glyphicon glyphicon-log-out"> Sair</span></a></li>
           <?php } else { ?>
             <li><a href="adm.php"><button class="btn-sm btn-success" id="adm" style="color:aliceblue">Administrador</button></a></li>
