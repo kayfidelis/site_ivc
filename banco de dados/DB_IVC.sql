@@ -51,6 +51,7 @@ create table tbl_membros(
     nm_membro varchar (80),
     senha varchar (100),
     ds_status boolean,
+    data_nascimento date,
     tel_membro varchar (80),
 	email_membro varchar (80),
     constraint fk_unidade foreign key(id_unidade) references tbl_unidades(id_unidade)
@@ -64,6 +65,7 @@ create procedure inserir_membros(
 	in p_nm_membro varchar (80),
     in p_senha varchar (100),
     in p_ds_status boolean,
+    in p_data_nascimento date,
     in p_tel_membro varchar (80),
     in p_email_membro varchar (80)
 )
@@ -72,8 +74,8 @@ begin
 	declare continue handler for sqlexception set erro_SQL = true;
     
     start transaction;
-		insert into tbl_membros (id_unidade, nm_membro, senha, ds_status, tel_membro, email_membro)
-			values (p_id_unidade, p_nm_membro, p_senha, p_ds_status, p_tel_membro, p_email_membro);
+		insert into tbl_membros (id_unidade, nm_membro, senha, ds_status, data_nascimento, tel_membro, email_membro)
+			values (p_id_unidade, p_nm_membro, p_senha, p_ds_status, p_data_nascimento, p_tel_membro, p_email_membro);
 	
     if(erro_SQL = false) then 
 		commit;
