@@ -20,6 +20,11 @@
             color: white;
         }
 
+        .custom-form a{
+            color: white;
+            
+        }
+
         .custom-form h2 {
             text-align: center;
             color: white;
@@ -46,6 +51,8 @@
                     <div class="form-group">
                         <label for="senha">Senha :</label>
                         <input name="txtsenha" type="password" class="form-control" required id="senha">
+                        <br/>
+                        <a href="alteraSenha.php">Esqueci minha senha</a>
                     </div>
                     <br />
                     <button type="submit" class="btn btn-primary btn-lg btn-block">
