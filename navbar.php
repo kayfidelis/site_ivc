@@ -43,7 +43,7 @@ include 'conexao.php';
 	if (empty($_SESSION['ID'])){
     echo '<script>
     function Alert() {
-      alert("É necessário estar logado para fazer compras!");
+      alert("Você ainda nã realizou seu login!");
   }
   </script>';
   };
@@ -63,18 +63,9 @@ include 'conexao.php';
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="index.php" style="color:aliceblue">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="Lançamento.php" style="color:aliceblue">Novidades</a></li>
+        <li><a href="index.php" style="color:aliceblue">Inicio<span class="sr-only">(current)</span></a></li>
+        <li><a href="Lançamento.php" style="color:aliceblue">Ministerios</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:aliceblue">Peças<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="categoria.php?cat=shape">Shape</a></li>
-            <li><a href="categoria.php?cat=truck">Truck</a></li>
-            <li><a href="categoria.php?cat=lixa">Lixa</a></li>
-            <li><a href="categoria.php?cat=roda">Roda</a></li>
-            <li><a href="categoria.php?cat=Rolamento">Rolamento</a></li>
-            <li><a href="categoria.php?cat=Parafuso">Parafuso de Base</a></li>
-          </ul>
         </li>
       </ul>
       <form class="navbar-form navbar-left" role="search" name="frmpesquisa" method="get" action="busca.php">
