@@ -14,7 +14,7 @@ $exibe = $consulta->fetch(PDO::FETCH_ASSOC);
 
 if ($consulta->rowCount() == 0) {
     echo '<script>
-    alert("O email digitado invalido!");
+    alert("O email digitado é invalido!");
     window.location.href = "FormRecupera_Senha.php";
   </script>';
 }
