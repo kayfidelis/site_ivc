@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>GRUTA.SB - Alteração de Usuário</title>
+    <title>IVC - Alteração de Membro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Latest compiled and minified CSS -->
