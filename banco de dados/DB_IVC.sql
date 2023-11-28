@@ -9,7 +9,9 @@ GRANT ALL PRIVILEGES ON ivc.* TO 'admin'@'localhost' WITH GRANT OPTION;
 create table tbl_unidades(
 	id_unidade int primary key auto_increment,
     nm_unidade varchar (80),
-    endereço_unidade varchar (80)
+    endereço_unidade varchar (80),
+    email_unidade varchar (80),
+    telefone_unidade varchar (80)
 );
 
 
@@ -17,15 +19,17 @@ drop procedure if exists inserir_unidade;
 delimiter $$ 
 create procedure inserir_unidade(
 	in p_nm_unidade varchar (80),
-    in p_endereço_unidade varchar (80)
+    in p_endereço_unidade varchar (80),
+    in p_email_unidade varchar (80),
+    in p_telefone_unidade varchar (80)
 )
 begin 
 	declare erro_SQL tinyint default false;
 	declare continue handler for sqlexception set erro_SQL = true;
     
     start transaction;
-		insert into tbl_unidades (nm_unidade, endereço_unidade)
-			values (p_nm_unidade, p_endereço_unidade);
+		insert into tbl_unidades (nm_unidade, endereço_unidade, email_unidade, telefone_unidade)
+			values (p_nm_unidade, p_endereço_unidade, p_email_unidade, p_telefone_unidade);
 	
     if(erro_SQL = false) then 
 		commit;
@@ -37,7 +41,6 @@ begin
 end $$
 delimiter ;
 
-call inserir_unidade ('IVC São Paulo' , 'Rua Santa Anna n3, Residencial Solnascente');
 
 select * from tbl_unidades;
 ------------------------------------------------- fim -------------------------------------------------
