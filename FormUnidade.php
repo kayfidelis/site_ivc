@@ -49,7 +49,7 @@
             <div class="col-sm-6 col-sm-offset-3 custom-form mx-auto">
                 <h2>Adicionar Unidade IVC</h2>
                 <br />
-                <form method="post" action="inserir_membro.php" name="logon">
+                <form method="post" action="inserir_unidade.php" name="logon">
                     <div class="form-group">
                         <label for="nome">Nome da Unidade :</label>
                         <input name="txtnome" type="text" class="form-control" required id="nome" placeholder="Ex: Vida Com Cristo SP">
@@ -64,7 +64,7 @@
                     </div>
                     <div class="form-group">
                         <label for="endereco">Endereço :</label>
-                        <input name="txtendereco" type="text" class="form-control" required id="endereco" placeholder="Ex: Rua Santa Anna n3" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}">
+                        <input name="txtendereco" type="text" class="form-control" required id="endereco" placeholder="Ex: Rua Santa Anna n3">
                     </div>
                     <br />
                     <button type="submit" class="btn btn-primary">
