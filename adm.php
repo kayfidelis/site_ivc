@@ -16,10 +16,10 @@
 
 
     <style>
-       .container-fluid {
-        margin-top: 5vw;
-        margin-bottom: 5vw;
-       }
+        .container-fluid {
+            margin-top: 5vw;
+            margin-bottom: 5vw;
+        }
     </style>
 
 
@@ -53,21 +53,15 @@
                     </button>
                 </a>
                 </br>
-                <a href="listaAlterar_Excluir.php">
+                <a href="listaExcluir.php">
                     <button type="submit" class="btn btn-block btn-lg btn-warning">
-                        Alterar / Excluir Membros
+                        Excluir Membros
                     </button>
                 </a>
                 </br>
                 <a href="FormUnidade.php">
                     <button type="submit" class="btn btn-block btn-lg btn-success">
                         Adicionar Unidade
-                    </button>
-                </a>
-                <br />
-                <a href="listaMembros.php">
-                    <button type="submit" class="btn btn-block btn-lg btn-info">
-                        Listar Membros
                     </button>
                 </a>
                 <br />
